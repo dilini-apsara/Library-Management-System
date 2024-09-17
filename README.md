@@ -44,10 +44,12 @@ To run this application locally, you need the following installed:
 ### API Endpoints
 The back end exposes the following API endpoints for managing books:
 
-**GET /api/v1/bookstore** : Fetch all books
-**GET /api/v1/bookstore/{id}**: Fetch a book by ID
-**POST /api/v1/bookstore** : Add a new book
-**PATCH /api/v1/bookstore/{id}** : Update a book
-**DELETE /api/v1/bookstore/{id}** : Delete a book
+- **GET /api/v1/bookstore** : Fetch all books
+- **GET /api/v1/bookstore/{id}**: Fetch a book by ID
+- **POST /api/v1/bookstore** : Add a new book
+- **PATCH /api/v1/bookstore/{id}** : Update a book
+- **DELETE /api/v1/bookstore/{id}** : Delete a book
+
+  
 You can test these endpoints using Postman.
 
