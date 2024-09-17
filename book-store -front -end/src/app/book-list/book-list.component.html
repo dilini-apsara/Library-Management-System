@@ -1,0 +1,27 @@
+<h2>Book List</h2>
+
+<table class="table table-borderless table-primary">
+  <thead>
+  <tr>
+    <th  scope="col">Reg Nu</th>
+    <th scope="col">Title</th>
+    <th scope="col">Author</th>
+    <th scope="col">Nu of Copies</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+<tr  *ngFor="let book of books">
+  <td>{{book.regNumber}}</td>
+  <td>{{book.bookName}}</td>
+  <td>{{book.author}}</td>
+  <td>{{book.copies}}</td>
+  <td class="d-flex gap-3">
+    <button (click)="updateBook(book.regNumber)" class="btn btn-info">Update</button>
+<!--    <button (click)="deleteBook(book.regNumber)" class="btn btn-danger">Delete</button>-->
+  </td>
+</tr>
+  </tbody>
+</table>
+
+

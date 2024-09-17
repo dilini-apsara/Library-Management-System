@@ -1,0 +1,73 @@
+<h2 class="text-center text-primary">Update Book Detail</h2>
+
+<form (ngSubmit)="updateBook(frmModel)" #frmModel="ngForm">
+  <div class="mb-3">
+    <label for="regNumber" class="form-label">Register Number</label>
+    <input name="regNumber" [(ngModel)]="books.regNumber"
+           #regNgModel="ngModel"
+           [class.is-invalid]="regNgModel.touched && regNgModel.invalid"
+           [class.is-valid]="regNgModel.touched && regNgModel.valid"
+           type="text" class="form-control" id="regNumber"
+           required pattern="^B\d{3}$">
+    @if (regNgModel.hasError('pattern')) {
+      <small class="invalid-feedback">Registration Number is invalid</small>
+    } @else {
+      <small class="invalid-feedback">Registration Number can't be empty</small>
+    }
+  </div>
+
+
+  <div class="mb-3">
+    <label for="bookName" class="form-label">Book Title</label>
+    <input name="bookName" [(ngModel)]="books.bookName"
+           #titleNgModel="ngModel"
+           [class.is-invalid]="titleNgModel.touched && titleNgModel.invalid"
+           [class.is-valid]="titleNgModel.touched && titleNgModel.valid"
+           type="text" class="form-control"
+           id="bookName"
+           required pattern="^[A-Za-z0-9 ]+$">
+    @if (titleNgModel.hasError('pattern')) {
+      <small class="invalid-feedback">Book name is invalid</small>
+    } @else {
+      <small class="invalid-feedback">Book Name can not be empty</small>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label for="author" class="form-label">Author</label>
+    <input name="author" [(ngModel)]="books.author"
+           #authorNgModel="ngModel"
+           [class.is-invalid]="authorNgModel.touched && authorNgModel.invalid"
+           [class.is-valid]="authorNgModel.touched && authorNgModel.valid"
+           type="text" class="form-control"
+           id="author"
+           required pattern="^[A-Za-z ]+">
+    @if (authorNgModel.hasError('pattern')) {
+      <small class="invalid-feedback">Author name is invalid</small>
+    } @else {
+      <small class="invalid-feedback">Author name can not be empty</small>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label for="copies" class="form-label">Number of Copies</label>
+    <input name="copies" [(ngModel)]="books.copies"
+           #copyNgModel="ngModel"
+           [class.is-invalid]="copyNgModel.touched && copyNgModel.invalid"
+           [class.is-valid]="copyNgModel.touched && copyNgModel.valid"
+           type="text" class="form-control"
+           id="copies"
+           required pattern="^\d{3}">
+    @if (copyNgModel.hasError('pattern')) {
+      <small class="invalid-feedback">Invalid input</small>
+    } @else {
+      <small class="invalid-feedback">Copies can not be empty</small>
+    }
+  </div>
+
+  <div class="d-grid gap-3 ">
+    <button type="submit" class="btn btn-success btn-lg ">Update</button>
+  </div>
+
+</form>
+
